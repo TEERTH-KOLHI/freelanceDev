@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <style>
+    .float { animation: float 6s ease-in-out infinite; }
+    .float-delayed { animation: float 6s ease-in-out infinite 3s; }
+    .pulse { animation: pulse 4s ease-in-out infinite; }
+    .spin { animation: spin 10s linear infinite; font-transform-origin: center; transform-box: fill-box;}
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+  </style>
+
+  <!-- Background decorative blobs -->
+  <circle cx="400" cy="300" r="250" fill="#EBF8FF" opacity="0.5" />
+  <circle cx="600" cy="150" r="50" fill="#F0FFF4" class="pulse" />
+  <circle cx="200" cy="500" r="80" fill="#E6FFFA" class="pulse" />
+
+  <!-- Laptop Stand -->
+  <path d="M300 450 L500 450 L520 470 L280 470 Z" fill="#CBD5E0" />
+  <path d="M280 470 L520 470 L520 480 L280 480 Z" fill="#A0AEC0" />
+
+  <!-- Monitor Shape -->
+  <rect x="200" y="150" width="400" height="300" rx="20" fill="#2D3748" /> <!-- Bezel -->
+  <rect x="220" y="170" width="360" height="260" rx="5" fill="#FFFFFF" /> <!-- Screen -->
+
+  <!-- Screen Content: Abstract Web Layout -->
+  <!-- Header -->
+  <rect x="240" y="190" width="320" height="30" rx="5" fill="#EBF8FF" />
+  
+  <!-- Sidebar -->
+  <rect x="240" y="235" width="80" height="180" rx="5" fill="#F7FAFC" />
+  
+  <!-- Main Content Area -->
+  <rect x="335" y="235" width="225" height="100" rx="5" fill="#F0FFF4" />
+  <rect x="335" y="350" width="105" height="65" rx="5" fill="#E6FFFA" />
+  <rect x="455" y="350" width="105" height="65" rx="5" fill="#EBF8FF" />
+
+  <!-- Decorative Elements ("Tech") -->
+  
+  <!-- Code Brackets Icon (Floating Left) -->
+  <g class="float" transform="translate(140, 200)">
+    <circle cx="40" cy="40" r="40" fill="#2B6CB0" opacity="0.1" />
+    <path d="M30 25 L15 40 L30 55 M50 25 L65 40 L50 55" stroke="#2B6CB0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- Gear Icon (Floating Right, Spinning) -->
+  <g class="float-delayed" transform="translate(580, 250)">
+    <circle cx="40" cy="40" r="40" fill="#38A169" opacity="0.1" />
+    <path class="spin" d="M40 20 L40 15 M40 65 L40 60 M20 40 L15 40 M65 40 L60 40 M26 26 L22 22 M58 58 L54 54 M26 54 L22 58 M58 26 L54 22" stroke="#38A169" stroke-width="6" stroke-linecap="round" />
+    <circle cx="40" cy="40" r="12" stroke="#38A169" stroke-width="4" fill="none" />
+  </g>
+
+  <!-- Bug/Shield Icon (Top Right) -->
+  <g class="float" transform="translate(520, 100)">
+    <circle cx="35" cy="35" r="35" fill="#E53E3E" opacity="0.1" />
+    <path d="M35 20 L35 50 M25 30 L45 30 M25 40 L45 40" stroke="#E53E3E" stroke-width="3" stroke-linecap="round" />
+    <path d="M35 15 C50 15 55 25 55 35 C55 50 35 60 35 60 C35 60 15 50 15 35 C15 25 20 15 35 15 Z" stroke="#E53E3E" stroke-width="3" fill="none" />
+  </g>
+
+  <!-- Connection Lines (Abstract) -->
+  <path d="M400 300 Q 550 300 600 290" stroke="#38A169" stroke-width="2" stroke-dasharray="5 5" opacity="0.3" fill="none" />
+  <path d="M400 300 Q 250 300 180 240" stroke="#2B6CB0" stroke-width="2" stroke-dasharray="5 5" opacity="0.3" fill="none" />
+
+</svg>

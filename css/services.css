@@ -1,0 +1,233 @@
+@import url(https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+#wrapper {
+    padding-top: 50px;
+}
+
+.services {
+    background: #ffffff;
+}
+
+.services h1 {
+    color: #2c3e50;
+    font-family: var(--font-heading);
+}
+
+.services p {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 22px;
+    color: #555555;
+}
+
+.services h1 span:before {
+    content: '/';
+    padding-right: 10px;
+    font-weight: 100;
+    color: #075985;
+}
+
+.services h1 span:after {
+    content: '/';
+    padding-left: 10px;
+    font-weight: 100;
+    color: #075985;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-md-6 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-md-3 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-md-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+.box-a {
+    background: #ffffff;
+    color: #333333;
+    padding: 20px 20px 20px 20px;
+    float: right;
+    position: relative;
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+}
+
+.box-a:before,
+.box-b:before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 0px;
+    height: 0px;
+    border-bottom: 15px solid #e0e0e0;
+    border-left: 15px solid #ffffff;
+    -webkit-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    display: block;
+    width: 0;
+}
+
+.box-a.rounded,
+.box-b.rounded {
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.box-a.rounded:before,
+.box-b.rounded:before {
+    border-width: 8px;
+    border-color: #ffffff #ffffff transparent transparent;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.box-a i {
+    font-size: 60px;
+    background: #f5f5f5;
+    color: #075985;
+    padding: 25px;
+    border-radius: 150px;
+}
+
+.box-a h3 {
+    position: relative;
+    display: block;
+    padding: 0;
+    text-align: left;
+    padding-bottom: 10px;
+    margin: 0;
+    font-family: var(--font-heading);
+    color: #075985;
+}
+
+.box-a p {
+    float: left;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 14px;
+    color: #555555;
+}
+
+.box-b {
+    background: #ffffff;
+    color: #333333;
+    padding: 20px 20px 20px 20px;
+    float: right;
+    position: relative;
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+}
+
+.box-b i {
+    font-size: 60px;
+    background: #f5f5f5;
+    color: #075985;
+    float: right;
+    padding: 25px;
+    border-radius: 150px;
+}
+
+.box-b h3 {
+    display: block;
+    padding: 0;
+    text-align: right;
+    padding-bottom: 10px;
+    margin: 0;
+    font-family: var(--font-heading);
+    color: #075985;
+    float: right;
+}
+
+.box-b p {
+    float: right;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    font-size: 14px;
+    color: #555555;
+}
+
+.box-a:hover i,
+.box-b:hover i {
+    background: #075985;
+    color: #ffffff;
+    transition: all 1s;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .col-md-9 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .box-a,
+    .box-b {
+        display: block;
+    }
+
+    .box-a h3,
+    .box-a p,
+    .box-b h3,
+    .box-b p {
+        text-align: center;
+        float: none;
+    }
+
+    .box-b i {
+        float: none;
+    }
+}

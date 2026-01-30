@@ -1,0 +1,188 @@
+/* Why Hire Me - Digital Slider Styling */
+#why-hire {
+    --digital-blue: #00d2ff;
+    --digital-glow: rgba(0, 210, 255, 0.5);
+    --bg-dark: #0f172a;
+    background-color: var(--white);
+    padding: 80px 0;
+}
+
+.benefits-slider-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.benefit-viewport {
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.benefit-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 30px;
+}
+
+.benefit-slide {
+    flex: 0 0 calc(100% / 3 - 20px);
+    min-width: 300px;
+}
+
+.benefit-card {
+    background: var(--white);
+    border: 1px solid #e2e8f0;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.benefit-card:hover {
+    border-color: var(--digital-blue);
+    box-shadow: 0 0 20px var(--digital-glow);
+    transform: translateY(-5px);
+}
+
+/* Digital Status Header */
+.digital-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    background-color: var(--digital-blue);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--digital-blue);
+}
+
+.status-text {
+    font-size: 0.75rem;
+    color: var(--digital-blue);
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+/* Speech Bubble Aesthetic (Testimonial Match) */
+.benefit-card blockquote {
+    margin: 0;
+    position: relative;
+    flex-grow: 1;
+}
+
+.benefit-card blockquote p {
+    background: #f8fafc;
+    padding: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #475569;
+    border-radius: 4px;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    border-left: 3px solid var(--digital-blue);
+}
+
+/* Footer Section */
+.benefit-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed #e2e8f0;
+}
+
+.benefit-footer h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: #1e293b;
+    font-weight: 700;
+}
+
+.benefit-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--digital-blue);
+    font-size: 1.25rem;
+}
+
+/* OK Badge */
+.digital-ok {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+    color: var(--accent-green);
+    border: 1px solid var(--accent-green);
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Nav Buttons */
+.benefit-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #e2e8f0;
+    background: var(--white);
+    color: #64748b;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.benefit-nav-btn:hover {
+    background: var(--digital-blue);
+    color: var(--white);
+    border-color: var(--digital-blue);
+    box-shadow: 0 0 15px var(--digital-glow);
+}
+
+.benefit-prev {
+    left: 0;
+}
+
+.benefit-next {
+    right: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .benefit-slide {
+        flex: 0 0 calc(50% - 15px);
+    }
+}
+
+@media (max-width: 600px) {
+    .benefit-slide {
+        flex: 0 0 100%;
+    }
+
+    .benefits-slider-container {
+        padding: 0 40px;
+    }
+}

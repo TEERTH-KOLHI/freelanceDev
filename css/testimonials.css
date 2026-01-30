@@ -1,0 +1,268 @@
+/* Testimonials Styling - Strict Implementation of User Request */
+
+#testimonials {
+    /* Scoped Variables from User Snippet */
+    --clr-bg: #fff;
+    --clr-primary: #222;
+    --clr-secondary: #075985;
+
+    background-color: #FFFFFF;
+    padding: 80px 0;
+    color: var(--clr-primary);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* User's .testimonials class styling */
+.testimonials {
+    --_trans-speed: 300ms;
+    --_avatar-size: 4rem;
+    --_quote-bg-clr: var(--clr-secondary);
+    --_quote-padding: 1rem;
+    --_quote-pointer-offset: 1rem;
+    --_quote-offset: 1rem;
+    /* this is to allow for the bottom arrow indicator*/
+    --_quotemarks-size: 60px;
+    --_quotemarks-offset-x: -1rem;
+    --_quotemarks-offset-y: -2rem;
+    --_clip-text: polygon(0 0, 0 0, 0 100%);
+    --_clip-text-width: 80px;
+    --_dots-size: 1.5rem;
+    --_dots-bg-clr: var(--clr-secondary);
+    --_dots-inset: 100%;
+    --_dots-border-clr: var(--clr-secondary);
+
+    width: min(calc(100% - 2rem), 800px);
+    margin-inline: auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Semi-transparent white */
+    /* Fixed syntax error from snippet: 0 0 0 / .5 -> rgba */
+    border: 1px solid var(--clr-secondary);
+    padding: 3rem;
+    border-radius: 0;
+    /* User snippet didn't have border-radius on main box, but project might prefer it. Sticking to snippet defaults (no radius specified implies 0 or inherited). Project has global boxes. Snippet has 'border' radius on box? No. */
+}
+
+@media (min-width:600px) {
+    .testimonials {
+        --_quotemarks-offset-x: -1rem;
+        --_quotemarks-offset-y: -1rem;
+        --_quotemarks-size: 80px;
+        --_quote-padding: 1rem 1.5rem 3rem 3rem;
+        --_box-clip-start-x: 100px;
+        --_clip-text: polygon(0 0, 70% 0, 0 100%);
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.quotes {
+    --_box-clip: polygon(var(--_box-clip-start-x) 0,
+            100% 0,
+            100% calc(100% - var(--_quote-offset)),
+            calc(100% - var(--_quote-pointer-offset)) calc(100% - var(--_quote-offset)),
+            calc(100% - (var(--_quote-pointer-offset) + 1rem)) 100%,
+            calc(100% - (var(--_quote-pointer-offset) + 2rem)) calc(100% - var(--_quote-offset)),
+            0 calc(100% - var(--_quote-offset)));
+    display: grid;
+    place-content: center;
+    grid-template-areas: 'stack';
+    width: 100%;
+    transition: width var(--_trans-speed) ease-in-out;
+}
+
+.quotes>article {
+    grid-area: stack;
+    transition: all 300ms;
+    margin-block-end: 1rem;
+    /* Opacity logic for stacking */
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Logic to show active article */
+input[type=radio]:checked+article {
+    opacity: 1;
+    pointer-events: all;
+    z-index: 1;
+    position: relative;
+    /* Snippet has css var logic */
+}
+
+
+.quotes .clip {
+    height: 100%;
+    width: var(--_clip-text-width);
+    shape-outside: var(--_clip-text);
+    float: left;
+    display: block;
+}
+
+.quotes blockquote {
+    margin-bottom: 1rem;
+    text-align: right;
+    transition: scale var(--_trans-speed) ease-in-out;
+    scale: var(--_scale, 0);
+    display: flex;
+    position: relative;
+    /* Ensure quote mark positions correctly */
+}
+
+/* quote mark */
+.quotes blockquote::before {
+    content: '';
+    position: absolute;
+    top: var(--_quotemarks-offset-y);
+    left: var(--_quotemarks-offset-x);
+    z-index: 2;
+    width: var(--_quotemarks-size);
+    height: var(--_quotemarks-size);
+    transition: translate, opacity, top;
+    transition-timing-function: ease-in-out;
+    transition-duration: var(--_trans-speed);
+    /* specific fix for rudarion typo in snippet */
+    transition-delay: var(--_trans-delay-quotes, 0ms);
+    opacity: var(--_opacity, 0);
+    scale: var(--_scale, 0);
+    background-image: url('data:image/svg+xml,<svg fill="black" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>quote</title><path d="M9.563 8.469l-0.813-1.25c-5.625 3.781-8.75 8.375-8.75 12.156 0 3.656 2.688 5.375 4.969 5.375 2.875 0 4.906-2.438 4.906-5 0-2.156-1.375-4-3.219-4.688-0.531-0.188-1.031-0.344-1.031-1.25 0-1.156 0.844-2.875 3.938-5.344zM21.969 8.469l-0.813-1.25c-5.563 3.781-8.75 8.375-8.75 12.156 0 3.656 2.75 5.375 5.031 5.375 2.906 0 4.969-2.438 4.969-5 0-2.156-1.406-4-3.313-4.688-0.531-0.188-1-0.344-1-1.25 0-1.156 0.875-2.875 3.875-5.344z"></path></g></svg>');
+    background-repeat: no-repeat;
+}
+
+.quotes blockquote>p {
+    position: relative;
+    font-weight: 300;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: var(--_quote-padding);
+    isolation: isolate;
+    background: var(--_quote-bg-clr);
+    color: #ffffff;
+    clip-path: var(--_box-clip);
+    /* text-wrap: balance; Not supported in all browsers yet, keeping for fidelity */
+}
+
+.quotes .user {
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+    justify-content: end;
+    text-align: right;
+}
+
+.quotes .user * {
+    opacity: var(--_opacity, 0);
+    transition:
+        translate var(--_trans-speed) ease-in-out,
+        opacity var(--_trans-speed) ease-in-out,
+        scale var(--_trans-speed) ease-in-out;
+    ;
+}
+
+/* user - name */
+.quotes .user p:first-child {
+    font-size: 1.1rem;
+    color: var(--clr-primary);
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    translate: var(--_translate, 0 2rem);
+    transition-delay: var(--_trans-delay-name, 0ms);
+    margin-bottom: 0;
+    /* Reset margins */
+}
+
+/* user - role */
+.quotes .user p:last-child {
+    font-weight: 300;
+    font-size: .8rem;
+    color: var(--clr-secondary);
+    translate: var(--_translate, 0 2rem);
+    transition-delay: var(--_trans-delay-role, 0ms);
+    margin-top: 0;
+}
+
+/* user - image */
+.quotes .user img {
+    border-radius: 2px;
+    border: 1px solid var(--clr-primary);
+    width: var(--_avatar-size, 60px);
+    height: var(--_avatar-size, 60px);
+    object-fit: cover;
+    transition-delay: var(--_trans-delay-img, 0ms);
+    scale: var(--_scale, 0);
+}
+
+/* checked all - Animation Vars */
+input[type=radio]:checked+article {
+    --_scale: 1;
+    --_translate: 0 0;
+    --_opacity: 1;
+    --_trans-delay-quotes: 300ms;
+    --_trans-delay-name: 300ms;
+    --_trans-delay-role: 400ms;
+    --_trans-delay-img: 500ms;
+}
+
+
+.dots {
+    padding: .25rem .5rem;
+    border-radius: 3px;
+    border: 1px dashed transparent;
+    width: fit-content;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: border-color 300ms ease-in-out;
+}
+
+.dots>label {
+    border-radius: 1rem;
+    border: 1px solid var(--_dots-border-clr);
+    position: relative;
+    width: var(--_dots-size);
+    height: var(--_dots-size);
+    aspect-ratio: 1;
+    cursor: pointer;
+    background: transparent;
+    transition: border-color var(--_trans-speed) ease-in-out, border-color var(--_trans-speed) ease-in-out;
+}
+
+
+.dots>label::before {
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+    inset: var(--_dots-inset);
+    background-color: var(--_dots-bg-clr);
+    transition: inset 300ms ease-in-out;
+}
+
+.dots>label:hover::before,
+.quotes:has(input#option-1:checked)+.dots>label:nth-child(1)::before,
+.quotes:has(input#option-2:checked)+.dots>label:nth-child(2)::before,
+.quotes:has(input#option-3:checked)+.dots>label:nth-child(3)::before,
+.quotes:has(input#option-4:checked)+.dots>label:nth-child(4)::before,
+.quotes:has(input#option-5:checked)+.dots>label:nth-child(5)::before,
+.quotes:has(input#option-6:checked)+.dots>label:nth-child(6)::before,
+.quotes:has(input#option-7:checked)+.dots>label:nth-child(7)::before,
+.quotes:has(input#option-8:checked)+.dots>label:nth-child(8)::before,
+.quotes:has(input#option-9:checked)+.dots>label:nth-child(9)::before,
+.quotes:has(input#option-10:checked)+.dots>label:nth-child(10)::before {
+    --_dots-inset: .25rem;
+}
+
+/* focus using keyboard adds border */
+.quotes:has(input:focus-visible)+.dots {
+    border-color: var(--clr-primary);
+}
