@@ -1,7 +1,7 @@
 /* Portfolio Section Styling */
 #portfolio {
     background-color: #FFFFFF;
-    padding: 100px 0;
+    padding: 80px 0;
     overflow: hidden;
     /* Prevent slider overflow from showing */
 }
@@ -52,17 +52,6 @@
     }
 }
 
-@media (max-width: 600px) {
-    .portfolio-item {
-        flex: 0 0 100%;
-        /* Shows 1 card on mobile */
-    }
-
-    .portfolio-slider-container {
-        padding: 0 10px;
-    }
-}
-
 .portfolio-item:hover {
     box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
     transform: translateY(-8px);
@@ -70,7 +59,7 @@
 }
 
 .portfolio-img {
-    height: 240px;
+    height: 200px;
     position: relative;
     overflow: hidden;
 }
@@ -109,7 +98,7 @@
 }
 
 .portfolio-info {
-    padding: 25px;
+    padding: 20px;
     text-align: left;
     flex-grow: 1;
     display: flex;
@@ -117,18 +106,18 @@
 }
 
 .portfolio-info h3 {
-    font-size: 1.3rem;
+    font-size: 2.0rem;
     color: #1a202c;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     font-weight: 800;
     letter-spacing: -0.02em;
 }
 
 .portfolio-info p {
     color: #4a5568;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     font-size: 0.9rem;
-    line-height: 1.6;
+    line-height: 1.5;
     flex-grow: 1;
 }
 
@@ -136,7 +125,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: auto;
+    margin-top: 15px;
 }
 
 .tag {
@@ -230,4 +219,90 @@
 
 .project-mini-slider img.active {
     opacity: 1;
+}
+
+/* 
+   Mobile Fixes (End of file to ensure override) 
+   ------------------------------------------
+*/
+@media (max-width: 600px) {
+    .portfolio-item {
+        flex: 0 0 100%;
+        border-color: #111827;
+        /* Match Site Standard */
+        border-radius: 0;
+    }
+
+    .portfolio-img {
+        height: 260px !important;
+    }
+
+    .project-mini-slider img {
+        object-fit: contain !important;
+        padding: 6px !important;
+        transform: none !important;
+    }
+
+    .portfolio-info {
+        padding: 12px 15px 8px !important;
+    }
+
+    .portfolio-info h3 {
+        font-size: 1rem !important;
+        margin-bottom: 4px !important;
+    }
+
+    .portfolio-info p {
+        font-size: 0.8rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 12px !important;
+        display: block !important;
+        overflow: visible !important;
+    }
+
+    .portfolio-tags {
+        margin-top: 5px !important;
+        gap: 5px !important;
+    }
+
+    .tag {
+        padding: 2px 6px !important;
+        font-size: 0.6rem !important;
+    }
+
+    .portfolio-slider-container {
+        padding: 0 !important;
+        /* Force 0 padding to match other boxes */
+        margin-bottom: 60px;
+        /* Space for buttons below card */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .portfolio-nav-btn {
+        top: auto !important;
+        bottom: -45px !important;
+        width: 35px !important;
+        height: 35px !important;
+        transform: none !important;
+        background: #fff;
+        border: 1px solid #111827;
+        /* Unified border color */
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .portfolio-nav-btn i {
+        font-size: 0.8rem !important;
+        color: #111827;
+    }
+
+    .portfolio-prev {
+        left: calc(50% - 40px) !important;
+    }
+
+    .portfolio-next {
+        right: calc(50% - 40px) !important;
+    }
 }

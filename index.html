@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Domine&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Domine&display=swap"
         rel="stylesheet">
 
     <!-- FontAwesome -->
@@ -39,10 +39,15 @@
     <!-- Site Header -->
     <header class="site-header">
         <div class="header-container">
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+
             <a href="#home" class="header-brand">
                 <img src="assets/images/footer-logo.png" alt="FreelanceDev Logo" class="header-logo-img">
                 <h2>Freelance<span>Dev</span></h2>
             </a>
+
             <nav class="header-nav">
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -52,6 +57,7 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+
         </div>
         <div class="scroll-progress-container">
             <div class="scroll-progress-bar" id="progressBar"></div>
@@ -185,6 +191,14 @@
                         <p>Rank Higher</p>
                     </div>
                 </div>
+                <div class="feature-divider"></div>
+                <div class="feature-item">
+                    <div class="icon-box"><i class="fas fa-thumbs-up"></i></div>
+                    <div class="feature-text">
+                        <h4>Highly Rated</h4>
+                        <p>5-Star Service</p>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -193,13 +207,13 @@
     <div id="wrapper">
         <section class="services" id="services">
             <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">Services</h2>
+                    <p class="section-subtitle">
+                        Professional web development solutions tailored to your needs.
+                    </p>
+                </div>
                 <div class="row">
-                    <div class="row text-center">
-                        <h1><span>Services</span></h1>
-                        <p>
-                            Professional web development solutions tailored to your needs.
-                        </p>
-                    </div>
                     <div class="col-md-6">
                         <div class="box-a">
                             <div class="col-md-3">
@@ -278,7 +292,7 @@
                     <div class="circle"></div>
                     <div class="card-content">
                         <h3>Frontend<br />Development</h3>
-                        <p>React.js • Angular • Vue.js • Bootstrap • HTML5 & CSS3</p>
+                        <p>React.js • Angular • Vue.js <br class="mobile-break" /> • Bootstrap • HTML5 & CSS3</p>
                     </div>
                     <div class="card-icon">
                         <i class="fas fa-laptop-code"></i>
@@ -302,7 +316,7 @@
                     <div class="circle"></div>
                     <div class="card-content">
                         <h3>Database<br />Management</h3>
-                        <p>MongoDB • MySQL • PostgreSQL • SQLite</p>
+                        <p>MongoDB • MySQL • PostgreSQL <br class="mobile-break" /> • SQLite</p>
                     </div>
                     <div class="card-icon">
                         <i class="fas fa-database"></i>
@@ -785,229 +799,243 @@
         <div class="container">
             <h2 class="section-title text-center" style="display: block; text-align: center;">What Clients Say</h2>
 
-            <section class="testimonials">
-                <div class="quotes">
+            <!-- Box around the box: Testimonials Frame -->
+            <div class="testimonials-outer-frame">
+                <section class="testimonials">
+                    <div class="quotes">
 
-                    <!-- Testimonial 1: John Doe -->
-                    <input type="radio" id="option-1" name="panel" class="sr-only" checked />
-                    <article>
-                        <blockquote>
-                            <p>
-                                <span class="clip clip-left"></span>
-                                "Fixed my WordPress site in under an hour! I was losing sales due to a critical checkout
-                                error, but they jumped in immediately. Super fast, professional, and explained exactly
-                                what went wrong. Highly recommended for any urgent bugs."
-                            </p>
-                        </blockquote>
-                        <div class="user">
-                            <div>
-                                <p>John Doe</p>
-                                <p>eCommerce Owner</p>
+                        <!-- Testimonial 1: John Doe -->
+                        <input type="radio" id="option-1" name="panel" class="sr-only" checked />
+                        <article>
+                            <blockquote>
+                                <p>
+                                    <span class="clip clip-left"></span>
+                                    "Fixed my WordPress site in under an hour! I was losing sales due to a critical
+                                    checkout
+                                    error, but they jumped in immediately. Super fast, professional, and explained
+                                    exactly
+                                    what went wrong. Highly recommended for any urgent bugs."
+                                </p>
+                            </blockquote>
+                            <div class="user">
+                                <div>
+                                    <p>John Doe</p>
+                                    <p>eCommerce Owner</p>
+                                </div>
+                                <img src="assets/images/john.png" alt="John Doe">
                             </div>
-                            <img src="assets/images/john.png" alt="John Doe">
-                        </div>
-                    </article>
+                        </article>
 
-                    <!-- Testimonial 2: Sarah Jenkins -->
-                    <input type="radio" id="option-2" name="panel" class="sr-only" />
-                    <article>
-                        <blockquote>
-                            <p>
-                                <span class="clip clip-left"></span>
-                                "Built a beautiful portfolio site for me from scratch. The design is exactly what I
-                                wanted—clean, modern, and minimal—and it loads incredibly fast. I've already received
-                                compliments from potential clients on how professional it looks."
-                            </p>
-                        </blockquote>
-                        <div class="user">
-                            <div>
-                                <p>Sarah Jenkins</p>
-                                <p>Graphic Designer</p>
+                        <!-- Testimonial 2: Sarah Jenkins -->
+                        <input type="radio" id="option-2" name="panel" class="sr-only" />
+                        <article>
+                            <blockquote>
+                                <p>
+                                    <span class="clip clip-left"></span>
+                                    "Built a beautiful portfolio site for me from scratch. The design is exactly what I
+                                    wanted—clean, modern, and minimal—and it loads incredibly fast. I've already
+                                    received
+                                    compliments from potential clients on how professional it looks."
+                                </p>
+                            </blockquote>
+                            <div class="user">
+                                <div>
+                                    <p>Sarah Jenkins</p>
+                                    <p>Graphic Designer</p>
+                                </div>
+                                <img src="assets/images/sarah.png" alt="Sarah Jenkins">
                             </div>
-                            <img src="assets/images/sarah.png" alt="Sarah Jenkins">
-                        </div>
-                    </article>
+                        </article>
 
-                    <!-- Testimonial 3: Mike Ross -->
-                    <input type="radio" id="option-3" name="panel" class="sr-only" />
-                    <article>
-                        <blockquote>
-                            <p>
-                                <span class="clip clip-left"></span>
-                                "Great communication throughout the project. It's rare to find a developer who really
-                                listens to business needs instead of just writing code. Use this developer if you want
-                                peace of mind and a partner who cares about your success."
-                            </p>
-                        </blockquote>
-                        <div class="user">
-                            <div>
-                                <p>Mike Ross</p>
-                                <p>Small Business Owner</p>
+                        <!-- Testimonial 3: Mike Ross -->
+                        <input type="radio" id="option-3" name="panel" class="sr-only" />
+                        <article>
+                            <blockquote>
+                                <p>
+                                    <span class="clip clip-left"></span>
+                                    "Great communication throughout the project. It's rare to find a developer who
+                                    really
+                                    listens to business needs instead of just writing code. Use this developer if you
+                                    want
+                                    peace of mind and a partner who cares about your success."
+                                </p>
+                            </blockquote>
+                            <div class="user">
+                                <div>
+                                    <p>Mike Ross</p>
+                                    <p>Small Business Owner</p>
+                                </div>
+                                <img src="assets/images/mike.png" alt="Mike Ross">
                             </div>
-                            <img src="assets/images/mike.png" alt="Mike Ross">
-                        </div>
-                    </article>
+                        </article>
 
-                    <!-- Testimonial 4: Emily White -->
-                    <input type="radio" id="option-4" name="panel" class="sr-only" />
-                    <article>
-                        <blockquote>
-                            <p>
-                                <span class="clip clip-left"></span>
-                                "Professional and efficient. We had some complex database query issues that were slowing
-                                down our dashboard. They analyzed the problem, optimized the indexes, and solved our
-                                performance bottlenecks in no time. Highly skilled developer."
-                            </p>
-                        </blockquote>
-                        <div class="user">
-                            <div>
-                                <p>Emily White</p>
-                                <p>Startup Founder</p>
+                        <!-- Testimonial 4: Emily White -->
+                        <input type="radio" id="option-4" name="panel" class="sr-only" />
+                        <article>
+                            <blockquote>
+                                <p>
+                                    <span class="clip clip-left"></span>
+                                    "Professional and efficient. We had some complex database query issues that were
+                                    slowing
+                                    down our dashboard. They analyzed the problem, optimized the indexes, and solved our
+                                    performance bottlenecks in no time. Highly skilled developer."
+                                </p>
+                            </blockquote>
+                            <div class="user">
+                                <div>
+                                    <p>Emily White</p>
+                                    <p>Startup Founder</p>
+                                </div>
+                                <img src="assets/images/emily.png" alt="Emily White">
                             </div>
-                            <img src="assets/images/emily.png" alt="Emily White">
-                        </div>
-                    </article>
+                        </article>
 
-                    <!-- Testimonial 5: David Brown -->
-                    <input type="radio" id="option-5" name="panel" class="sr-only" />
-                    <article>
-                        <blockquote>
-                            <p>
-                                <span class="clip clip-left"></span>
-                                "The site speed improvement is noticeable. We went from a 'red' score on PageSpeed
-                                Insights to straight green branding. Our SEO rankings have gone up since the update, and
-                                our bounce rate has dropped significantly."
-                            </p>
-                        </blockquote>
-                        <div class="user">
-                            <div>
-                                <p>Grace Kim</p>
-                                <p>Marketing Manager</p>
+                        <!-- Testimonial 5: David Brown -->
+                        <input type="radio" id="option-5" name="panel" class="sr-only" />
+                        <article>
+                            <blockquote>
+                                <p>
+                                    <span class="clip clip-left"></span>
+                                    "The site speed improvement is noticeable. We went from a 'red' score on PageSpeed
+                                    Insights to straight green branding. Our SEO rankings have gone up since the update,
+                                    and
+                                    our bounce rate has dropped significantly."
+                                </p>
+                            </blockquote>
+                            <div class="user">
+                                <div>
+                                    <p>Grace Kim</p>
+                                    <p>Marketing Manager</p>
+                                </div>
+                                <img src="assets/images/grace.png" alt="Grace Kim">
                             </div>
-                            <img src="assets/images/grace.png" alt="Grace Kim">
-                        </div>
-                    </article>
+                        </article>
 
-                    <!-- Testimonial 6: Lisa Wong -->
-                    <input type="radio" id="option-6" name="panel" class="sr-only" />
-                    <article>
-                        <blockquote>
-                            <p>
-                                <span class="clip clip-left"></span>
-                                "Incredible attention to detail. The API integration works flawlessly and handles all
-                                our edge cases robustly. Documentation was clear, making the handoff process smooth for
-                                our internal team. A true professional."
-                            </p>
-                        </blockquote>
-                        <div class="user">
-                            <div>
-                                <p>Lisa Wong</p>
-                                <p>App Developer</p>
+                        <!-- Testimonial 6: Lisa Wong -->
+                        <input type="radio" id="option-6" name="panel" class="sr-only" />
+                        <article>
+                            <blockquote>
+                                <p>
+                                    <span class="clip clip-left"></span>
+                                    "Incredible attention to detail. The API integration works flawlessly and handles
+                                    all
+                                    our edge cases robustly. Documentation was clear, making the handoff process smooth
+                                    for
+                                    our internal team. A true professional."
+                                </p>
+                            </blockquote>
+                            <div class="user">
+                                <div>
+                                    <p>Lisa Wong</p>
+                                    <p>App Developer</p>
+                                </div>
+                                <img src="assets/images/lisa.png" alt="Lisa Wong">
                             </div>
-                            <img src="assets/images/lisa.png" alt="Lisa Wong">
-                        </div>
-                    </article>
+                        </article>
 
-                    <!-- Testimonial 7: James Miller -->
-                    <input type="radio" id="option-7" name="panel" class="sr-only" />
-                    <article>
-                        <blockquote>
-                            <p>
-                                <span class="clip clip-left"></span>
-                                "Scaled our platform to handle 10x traffic without a hitch. We were worried about our
-                                upcoming launch day, but the architectural changes suggested and implemented made it a
-                                breeze. Truly expert engineering."
-                            </p>
-                        </blockquote>
-                        <div class="user">
-                            <div>
-                                <p>Arjun Patel</p>
-                                <p>SaaS CEO</p>
+                        <!-- Testimonial 7: James Miller -->
+                        <input type="radio" id="option-7" name="panel" class="sr-only" />
+                        <article>
+                            <blockquote>
+                                <p>
+                                    <span class="clip clip-left"></span>
+                                    "Scaled our platform to handle 10x traffic without a hitch. We were worried about
+                                    our
+                                    upcoming launch day, but the architectural changes suggested and implemented made it
+                                    a
+                                    breeze. Truly expert engineering."
+                                </p>
+                            </blockquote>
+                            <div class="user">
+                                <div>
+                                    <p>Arjun Patel</p>
+                                    <p>SaaS CEO</p>
+                                </div>
+                                <img src="assets/images/james.png" alt="Arjun Patel">
                             </div>
-                            <img src="assets/images/james.png" alt="Arjun Patel">
-                        </div>
-                    </article>
+                        </article>
 
-                    <!-- Testimonial 8: Sophia Clark -->
-                    <input type="radio" id="option-8" name="panel" class="sr-only" />
-                    <article>
-                        <blockquote>
-                            <p>
-                                <span class="clip clip-left"></span>
-                                "The code is clean, well-documented, and easy to maintain. I've worked with many
-                                freelancers who leave a mess behind, but this was refreshing. Highly organized and a
-                                pleasure to work with from start to finish."
-                            </p>
-                        </blockquote>
-                        <div class="user">
-                            <div>
-                                <p>Sophia Clark</p>
-                                <p>Freelancer</p>
+                        <!-- Testimonial 8: Sophia Clark -->
+                        <input type="radio" id="option-8" name="panel" class="sr-only" />
+                        <article>
+                            <blockquote>
+                                <p>
+                                    <span class="clip clip-left"></span>
+                                    "The code is clean, well-documented, and easy to maintain. I've worked with many
+                                    freelancers who leave a mess behind, but this was refreshing. Highly organized and a
+                                    pleasure to work with from start to finish."
+                                </p>
+                            </blockquote>
+                            <div class="user">
+                                <div>
+                                    <p>Sophia Clark</p>
+                                    <p>Freelancer</p>
+                                </div>
+                                <img src="assets/images/sophia.png" alt="Sophia Clark">
                             </div>
-                            <img src="assets/images/sophia.png" alt="Sophia Clark">
-                        </div>
-                    </article>
+                        </article>
 
-                    <!-- Testimonial 9: Daniel Lee -->
-                    <input type="radio" id="option-9" name="panel" class="sr-only" />
-                    <article>
-                        <blockquote>
-                            <p>
-                                <span class="clip clip-left"></span>
-                                "Solved a bug that had plagued us for months in just two days. Our previous vendor
-                                couldn't figure it out, but they identified the root cause in the legacy codebase
-                                immediately. Highly recommended efficient troubleshooter."
-                            </p>
-                        </blockquote>
-                        <div class="user">
-                            <div>
-                                <p>Daniel Lee</p>
-                                <p>Tech Lead</p>
+                        <!-- Testimonial 9: Daniel Lee -->
+                        <input type="radio" id="option-9" name="panel" class="sr-only" />
+                        <article>
+                            <blockquote>
+                                <p>
+                                    <span class="clip clip-left"></span>
+                                    "Solved a bug that had plagued us for months in just two days. Our previous vendor
+                                    couldn't figure it out, but they identified the root cause in the legacy codebase
+                                    immediately. Highly recommended efficient troubleshooter."
+                                </p>
+                            </blockquote>
+                            <div class="user">
+                                <div>
+                                    <p>Daniel Lee</p>
+                                    <p>Tech Lead</p>
+                                </div>
+                                <img src="assets/images/daniel.png" alt="Daniel Lee">
                             </div>
-                            <img src="assets/images/daniel.png" alt="Daniel Lee">
-                        </div>
-                    </article>
+                        </article>
 
-                    <!-- Testimonial 10: Olivia Green -->
-                    <input type="radio" id="option-10" name="panel" class="sr-only" />
-                    <article>
-                        <blockquote>
-                            <p>
-                                <span class="clip clip-left"></span>
-                                "Pixel-perfect implementation of our design. As a creative director, I'm picky about
-                                spacing and typography, but they nailed every detail. The animations are smooth and
-                                delightful, adding real polish to the user experience."
-                            </p>
-                        </blockquote>
-                        <div class="user">
-                            <div>
-                                <p>Olivia Green</p>
-                                <p>Creative Director</p>
+                        <!-- Testimonial 10: Olivia Green -->
+                        <input type="radio" id="option-10" name="panel" class="sr-only" />
+                        <article>
+                            <blockquote>
+                                <p>
+                                    <span class="clip clip-left"></span>
+                                    "Pixel-perfect implementation of our design. As a creative director, I'm picky about
+                                    spacing and typography, but they nailed every detail. The animations are smooth and
+                                    delightful, adding real polish to the user experience."
+                                </p>
+                            </blockquote>
+                            <div class="user">
+                                <div>
+                                    <p>Olivia Green</p>
+                                    <p>Creative Director</p>
+                                </div>
+                                <img src="assets/images/olivia.png" alt="Olivia Green">
                             </div>
-                            <img src="assets/images/olivia.png" alt="Olivia Green">
-                        </div>
-                    </article>
+                        </article>
 
-                </div>
+                    </div>
 
-                <div class="dots">
-                    <label id="toggle-1" for="option-1" aria-label="toggle panel 1"></label>
-                    <label id="toggle-2" for="option-2" aria-label="toggle panel 2"></label>
-                    <label id="toggle-3" for="option-3" aria-label="toggle panel 3"></label>
-                    <label id="toggle-4" for="option-4" aria-label="toggle panel 4"></label>
-                    <label id="toggle-5" for="option-5" aria-label="toggle panel 5"></label>
-                    <label id="toggle-6" for="option-6" aria-label="toggle panel 6"></label>
-                    <label id="toggle-7" for="option-7" aria-label="toggle panel 7"></label>
-                    <label id="toggle-8" for="option-8" aria-label="toggle panel 8"></label>
-                    <label id="toggle-9" for="option-9" aria-label="toggle panel 9"></label>
-                    <label id="toggle-10" for="option-10" aria-label="toggle panel 10"></label>
-                </div>
-            </section>
+                    <div class="dots">
+                        <label id="toggle-1" for="option-1" aria-label="toggle panel 1"></label>
+                        <label id="toggle-2" for="option-2" aria-label="toggle panel 2"></label>
+                        <label id="toggle-3" for="option-3" aria-label="toggle panel 3"></label>
+                        <label id="toggle-4" for="option-4" aria-label="toggle panel 4"></label>
+                        <label id="toggle-5" for="option-5" aria-label="toggle panel 5"></label>
+                        <label id="toggle-6" for="option-6" aria-label="toggle panel 6"></label>
+                        <label id="toggle-7" for="option-7" aria-label="toggle panel 7"></label>
+                        <label id="toggle-8" for="option-8" aria-label="toggle panel 8"></label>
+                        <label id="toggle-9" for="option-9" aria-label="toggle panel 9"></label>
+                        <label id="toggle-10" for="option-10" aria-label="toggle panel 10"></label>
+                    </div>
+                </section>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="section" id="contact" style="background: #ffffff; color: #2D3748; padding-bottom: 80px;">
+    <section class="section" id="contact" style="background: #ffffff; color: #2D3748; padding: 80px 0;">
         <div class="container text-center">
             <h2 class="section-title" style="color: #111827;">Ready to Start?</h2>
             <p class="section-subtitle" style="color: #718096;">Whether it's a small fix or a big project, I'm here to
@@ -1024,8 +1052,9 @@
             <div class="or-divider">OR</div>
 
             <div class="row">
-                <div class="col-md-10 offset-md-1">
-                    <div class="contact_inner" style="margin-bottom: 60px; text-align: left;">
+                <div class="col-md-12">
+                    <!-- Desktop Contact Box (Hidden on Mobile) -->
+                    <div class="contact_inner desktop-only-contact" style="margin-bottom: 60px; text-align: left;">
                         <div class="row">
                             <div class="col-md-10">
                                 <div class="contact_form_inner">
@@ -1057,23 +1086,55 @@
                                 <span>info.freelance@dev.com</span>
                             </div>
                             <div class="d-flex info_single align-items-center">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>150 Market St, SF</span>
+                                <i class="fas fa-clock"></i>
+                                <span>Response within 24 hours</span>
                             </div>
-
-                            <!-- Integrated Small Map (Full Width & Bottom Flush) -->
-                            <div class="map_bind"
-                                style="border-radius: 0 0 0 10px; overflow: hidden; margin-top: 20px; margin-left: -40px; margin-right: -40px; margin-bottom: -45px; border: none; width: calc(100% + 80px); flex-grow: 1;">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.1112443026217!2d-122.39690192340243!3d37.79255011033621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858066c0d0d667%3A0xe7f8644e54e427b!2s150%20Market%20St%2C%20San%20Francisco%2C%20CA%2094105%2C%20USA!5e0!3m2!1sen!2sus!4v1706554100000!5m2!1sen!2sus"
-                                    width="100%" height="220" frameborder="0"
-                                    style="border:0; height: 100%; min-height: 220px; display: block;"
-                                    allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                            <div class="d-flex info_single align-items-center">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Mon - Fri, 9 AM - 6 PM</span>
+                            </div>
+                            <div class="d-flex info_single align-items-center">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Available for new projects</span>
+                            </div>
+                            <div class="d-flex info_single align-items-center">
+                                <i class="fas fa-globe"></i>
+                                <span>Serving Clients Globally</span>
                             </div>
                         </div>
                     </div>
 
-
+                    <!-- Simple Modern Mobile Form -->
+                    <div class="mobile-contact-card">
+                        <div class="mobile-contact-header">
+                            <h3>Send a Message</h3>
+                            <p>I'll get back to you within 24 hours.</p>
+                        </div>
+                        <div class="mobile-contact-form">
+                            <div class="mobile-input-group">
+                                <input type="text" placeholder="Your Name" required>
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="mobile-input-group">
+                                <input type="email" placeholder="Your Email" required>
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="mobile-input-group">
+                                <textarea placeholder="Message" rows="4" required></textarea>
+                                <i class="fas fa-comment"></i>
+                            </div>
+                            <button class="mobile-submit-btn">
+                                Send Message <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="mobile-contact-info-footer">
+                            <a href="mailto:info.freelance@dev.com"><i class="fas fa-envelope"></i>
+                                info.freelance@dev.com</a>
+                            <span><i class="fas fa-clock"></i> Response within 24 hours</span>
+                            <span><i class="fas fa-check-circle"></i> Available for new projects</span>
+                            <span><i class="fas fa-globe"></i> Serving Clients Globally</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1102,7 +1163,7 @@
                 <a href="#" class="footer-social-link"><i class="fab fa-github"></i></a>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 FreelanceDev. All rights reserved.</p>
+                <p>&copy; <span id="current-year">2024</span> FreelanceDev. All rights reserved.</p>
             </div>
         </div>
     </footer>

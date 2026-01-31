@@ -13,12 +13,29 @@
   --bg-footer: #1A202C;
 
   /* Typography */
-  --font-heading: 'Domine', serif;
-  --font-body: 'Domine', serif;
+  --font-heading: 'Genos', sans-serif;
+  --font-body: 'Genos', sans-serif;
 
   /* Spacing */
   --container-width: 1200px;
   --section-padding: 80px 20px;
+}
+
+@media (max-width: 768px) {
+  .row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  /* Force all columns in themed boxes to have 0 padding on mobile */
+  .col-md-6,
+  .col-md-3,
+  .col-md-9,
+  .col-md-10,
+  .col-md-12 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
 
 /* Reset & Base Styles */
@@ -26,6 +43,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: clip;
+  width: 100%;
+  position: relative;
 }
 
 body {
@@ -78,7 +105,7 @@ img {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: var(--text-dark);
   margin-bottom: 1rem;
   position: relative;
@@ -124,6 +151,13 @@ img {
   background-color: var(--primary-dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 0;
+    /* Removing horizontal padding on mobile */
+  }
 }
 
 .btn-accent {

@@ -256,5 +256,33 @@ document.addEventListener('DOMContentLoaded', () => {
         if (section.id) navObserver.observe(section);
     });
 
+    // --- Navbar Toggle logic ---
+    const navToggle = document.querySelector('.nav-toggle');
+    const headerNav = document.querySelector('.header-nav');
+
+    if (navToggle && headerNav) {
+        navToggle.addEventListener('click', () => {
+            headerNav.classList.toggle('nav-active');
+            navToggle.classList.toggle('nav-active');
+            document.body.style.overflow = headerNav.classList.contains('nav-active') ? 'hidden' : '';
+        });
+
+        // Close menu when clicking a link
+        const navLinksForToggle = headerNav.querySelectorAll('a');
+        navLinksForToggle.forEach(link => {
+            link.addEventListener('click', () => {
+                headerNav.classList.remove('nav-active');
+                navToggle.classList.remove('nav-active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
+    // --- Dynamic Year Logic ---
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+
     startMiniSlider();
 });

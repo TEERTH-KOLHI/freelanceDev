@@ -9,7 +9,7 @@
 
 .benefits-slider-container {
     position: relative;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 60px;
 }
@@ -106,7 +106,7 @@
 }
 
 .benefit-footer h3 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin: 0;
     color: #1e293b;
     font-weight: 700;
@@ -183,6 +183,17 @@
     }
 
     .benefits-slider-container {
-        padding: 0 40px;
+        padding: 0 !important;
+        /* Force 0 padding to match other boxes */
+    }
+
+    .benefit-card {
+        width: 100%;
+        max-width: 100%;
+        border: 1px solid #111827;
+        /* Match Site Standard */
+        padding: 20px;
+        border-radius: 0;
+        /* Sharp corners */
     }
 }
