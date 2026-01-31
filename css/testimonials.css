@@ -31,9 +31,10 @@
 @media (max-width: 768px) {
     .testimonials-outer-frame {
         width: 100% !important;
-        padding: 40px 20px;
+        padding: 20px 15px;
         border-left: none;
         border-right: none;
+        border-radius: 12px;
         /* Full width edge-to-edge look on mobile */
     }
 }
@@ -72,11 +73,18 @@
     .testimonials {
         width: 100%;
         max-width: 100%;
-        padding: 2.5rem 1rem;
+        padding: 1rem 0.5rem;
         border-color: #111827;
         /* Match Site Standard */
         --_dots-size: 1rem;
         border-radius: 8px !important;
+        --_box-clip-start-x: 30px;
+        --_clip-text-width: 30px;
+        /* Visual top gap: 0.8rem. Bottom visual gap: (1.8rem - 1rem pointer) = 0.8rem. Perfect symmetry. */
+        --_quote-padding: 0.8rem 1.2rem 1.8rem 1.2rem;
+        --_quotemarks-size: 35px;
+        --_quotemarks-offset-x: -0.2rem;
+        --_quotemarks-offset-y: -0.5rem;
     }
 
     .quotes .user img {
@@ -85,6 +93,16 @@
 
     .dots {
         gap: 0.3rem;
+    }
+
+    /* Remove excessive bottom space from hidden articles */
+    .quotes article {
+        margin-block-end: 0 !important;
+    }
+
+    /* Match container bottom space to top padding */
+    .testimonials {
+        padding-bottom: 0.5rem !important;
     }
 }
 
@@ -188,7 +206,7 @@ input[type=radio]:checked+article {
     position: relative;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    font-size: 0.95rem;
+    font-size: 0.82rem;
     line-height: 1.6;
     padding: var(--_quote-padding);
     isolation: isolate;
