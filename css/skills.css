@@ -127,6 +127,16 @@
 .card-content {
     position: relative;
     z-index: 1;
+    transition: padding 0.3s ease;
+}
+
+/* Desktop offsets for circular center design */
+@media (min-width: 769px) {
+
+    .skill-card:nth-child(2) .card-content,
+    .skill-card:nth-child(4) .card-content {
+        padding-left: 200px;
+    }
 }
 
 .card-content h3 {
@@ -203,7 +213,7 @@
     right: 30px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 6rem;
+    font-size: 4rem;
     color: #ffffff;
     opacity: 0;
     transition: opacity 0.6s ease;
@@ -230,7 +240,8 @@
 @media (max-width: 768px) {
     .skills-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px;
+        margin-top: 30px;
     }
 
     .center-star {
@@ -238,25 +249,54 @@
     }
 
     .skill-card {
-        padding: 30px;
-        border-radius: 0 !important;
+        padding: 25px;
+        border-radius: 8px !important;
+        /* Adding subtle rounding for better mobile 'card' feel */
+        min-height: 180px;
+        display: flex;
+        align-items: center;
+        /* Persistent Hover Effect as default on mobile */
+        box-shadow: 1px 1px 20px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .skill-card::before {
+        clip-path: circle(110vw at 100% 100%) !important;
     }
 
     .skill-card:nth-child(n) {
-        border-radius: 0 !important;
+        border-radius: 8px !important;
+    }
+
+    /* Reset offsets for all cards on mobile */
+    .card-content {
+        padding-left: 0 !important;
+        text-align: left;
+        width: 100%;
+        color: #ffffff;
     }
 
     .card-content h3 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+        color: #ffffff;
     }
 
     .card-content p {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.9);
     }
 
-    .mobile-break {
-        display: block;
-        height: 0;
-        margin-top: 2px;
+    /* Make icons slightly visible on mobile for better context */
+    .card-icon {
+        opacity: 0.25;
+        font-size: 3rem;
+        right: 20px;
+        color: #ffffff;
+    }
+
+    .skill-card:nth-child(2) .card-icon,
+    .skill-card:nth-child(4) .card-icon {
+        left: auto;
+        right: 20px;
     }
 }

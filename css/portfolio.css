@@ -230,7 +230,7 @@
         flex: 0 0 100%;
         border-color: #111827;
         /* Match Site Standard */
-        border-radius: 0;
+        border-radius: 8px !important;
     }
 
     .portfolio-img {

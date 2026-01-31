@@ -193,7 +193,7 @@
         border: 1px solid #111827;
         /* Match Site Standard */
         padding: 20px;
-        border-radius: 0;
+        border-radius: 8px !important;
         /* Sharp corners */
     }
 }

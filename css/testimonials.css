@@ -72,9 +72,19 @@
     .testimonials {
         width: 100%;
         max-width: 100%;
-        padding: 20px;
+        padding: 2.5rem 1rem;
         border-color: #111827;
         /* Match Site Standard */
+        --_dots-size: 1rem;
+        border-radius: 8px !important;
+    }
+
+    .quotes .user img {
+        border-radius: 8px !important;
+    }
+
+    .dots {
+        gap: 0.3rem;
     }
 }
 
@@ -229,7 +239,7 @@ input[type=radio]:checked+article {
 
 /* user - image */
 .quotes .user img {
-    border-radius: 2px;
+    border-radius: 8px !important;
     border: 1px solid var(--clr-primary);
     width: var(--_avatar-size, 60px);
     height: var(--_avatar-size, 60px);
