@@ -264,7 +264,6 @@ document.addEventListener('DOMContentLoaded', () => {
         navToggle.addEventListener('click', () => {
             headerNav.classList.toggle('nav-active');
             navToggle.classList.toggle('nav-active');
-            document.body.style.overflow = headerNav.classList.contains('nav-active') ? 'hidden' : '';
         });
 
         // Close menu when clicking a link
@@ -273,7 +272,6 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', () => {
                 headerNav.classList.remove('nav-active');
                 navToggle.classList.remove('nav-active');
-                document.body.style.overflow = '';
             });
         });
     }
