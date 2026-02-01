@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => updatePortfolioSlider(false), 100);
     }
 
-    // --- Why Choose Me? (Benefits) Slider Logic ---
+    // --- Why Choose Us? (Benefits) Slider Logic ---
     const benefitTrack = document.querySelector('.benefit-track');
     const bPrevBtn = document.querySelector('.benefit-prev');
     const bNextBtn = document.querySelector('.benefit-next');
