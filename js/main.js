@@ -283,4 +283,67 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     startMiniSlider();
+
+    // --- AJAX Contact Form Logic ---
+    const contactForms = document.querySelectorAll('form[action*="formsubmit.co"]');
+    const modal = document.getElementById('success-modal');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+
+    if (modal && closeModalBtn) {
+        // Close modal logic
+        const closeModal = () => {
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300); // Wait for fade out
+        };
+
+        closeModalBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // Form submission logic
+        contactForms.forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault(); // Prevent default redirect
+
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn.innerHTML;
+
+                // Loading State
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            // Success: Show Modal
+                            modal.style.display = 'flex';
+                            // Force reflow for transition
+                            modal.offsetHeight;
+                            modal.classList.add('active');
+                            form.reset(); // Clear inputs
+                        } else {
+                            alert('Something went wrong. Please try again.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Something went wrong. Please try again later.');
+                    })
+                    .finally(() => {
+                        // Restore Button
+                        submitBtn.innerHTML = originalBtnText;
+                        submitBtn.disabled = false;
+                    });
+            });
+        });
+    }
 });
