@@ -598,7 +598,7 @@
     /* Feature Bar Grid Cards */
     .feature-bar {
         position: relative;
-        margin-top: 40px;
+        margin-top: 10px;
         width: 100%;
         left: 0;
         /* Reset desktop offset */
