@@ -504,3 +504,37 @@ button.contact_form_submit:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
+/* Desktop Contact Form Icons */
+.desktop-input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.desktop-input-group .form-control {
+    padding-left: 35px;
+    /* Space for icon */
+    margin-bottom: 0;
+    /* Wrapper handles margin */
+}
+
+.desktop-input-group i {
+    position: absolute;
+    left: 0;
+    top: 12px;
+    color: #075985;
+    font-size: 16px;
+    pointer-events: none;
+    /* Let clicks pass through to input */
+    transition: color 0.3s ease;
+}
+
+.desktop-input-group textarea+i {
+    top: 15px;
+    /* Adjust for textarea */
+}
+
+.desktop-input-group .form-control:focus+i {
+    color: #0ea5e9;
+    /* Light blue on focus */
+}

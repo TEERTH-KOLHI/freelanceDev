@@ -1120,12 +1120,21 @@
                                         <h3>Contact Us</h3>
                                         <p>Feel Free to contact us any time. We will get back to you as soon as we can!.
                                         </p>
-                                        <input type="text" name="name" class="form-control form-group"
-                                            placeholder="Name" required />
-                                        <input type="email" name="email" class="form-control form-group"
-                                            placeholder="Email" required />
-                                        <textarea name="message" class="form-control form-group" placeholder="Message"
-                                            required></textarea>
+                                        <div class="desktop-input-group">
+                                            <input type="text" name="name" class="form-control"
+                                                placeholder="Your full name" required />
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                        <div class="desktop-input-group">
+                                            <input type="email" name="email" class="form-control"
+                                                placeholder="Your working email" required />
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div class="desktop-input-group">
+                                            <textarea name="message" class="form-control"
+                                                placeholder="Please explain what you want" required></textarea>
+                                            <i class="fas fa-comment-alt"></i>
+                                        </div>
 
                                         <!-- FormSubmit Configuration -->
                                         <input type="hidden" name="_subject"
@@ -1181,15 +1190,16 @@
                         <form class="mobile-contact-form" action="https://formsubmit.co/teerth4dm@gmail.com"
                             method="POST">
                             <div class="mobile-input-group">
-                                <input type="text" name="name" placeholder="Your Name" required>
+                                <input type="text" name="name" placeholder="Your full name" required>
                                 <i class="fas fa-user"></i>
                             </div>
                             <div class="mobile-input-group">
-                                <input type="email" name="email" placeholder="Your Email" required>
+                                <input type="email" name="email" placeholder="Your working email" required>
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div class="mobile-input-group">
-                                <textarea name="message" placeholder="Message" rows="4" required></textarea>
+                                <textarea name="message" placeholder="Please explain what you want" rows="4"
+                                    required></textarea>
                                 <i class="fas fa-comment"></i>
                             </div>
 
