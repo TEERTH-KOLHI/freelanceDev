@@ -1,0 +1,120 @@
+/* Real Stats Section Styling - Dual Marquee */
+#real-stats {
+    background-color: #ffffff;
+    padding: 20px 0 6px 0;
+    /* Reduced top padding to 20px, bottom to 6px */
+    overflow: hidden;
+    /* Hide overflow from marquee */
+}
+
+#real-stats .section-title {
+    color: #111827;
+    margin-bottom: 1rem;
+}
+
+#real-stats .section-subtitle {
+    color: #4b5563;
+    max-width: 600px;
+    margin: 0 auto 15px auto;
+    /* Reduced bottom margin to 15px */
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+/* Marquee Container */
+.marquee-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* Reduced vertical gap */
+    /* Space between rows */
+    width: 100%;
+}
+
+.marquee-row {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-track {
+    display: flex;
+    gap: 6px;
+    /* Reduced to 6px */
+    /* Space between images */
+    width: max-content;
+    will-change: transform;
+    /* Performance optimization */
+}
+
+/* Animations */
+.scroll-left {
+    animation: scroll-left 40s linear infinite;
+}
+
+.scroll-right {
+    animation: scroll-right 40s linear infinite;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Interaction: Pause on Hover */
+.marquee-row:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* Stat Image Styling */
+.stat-card {
+    flex-shrink: 0;
+    border-radius: 0;
+    /* Sharp corners */
+    overflow: hidden;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    height: 80px;
+    /* Reduced from 100px */
+    transition: transform 0.3s ease;
+}
+
+.stat-img {
+    height: 100%;
+    width: auto;
+    /* Natural width based on height */
+    display: block;
+    object-fit: contain;
+    /* Ensure full image is visible */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stat-card {
+        height: 60px;
+        /* Reduced from 80px */
+    }
+
+    .marquee-wrapper {
+        gap: 1rem;
+    }
+}
