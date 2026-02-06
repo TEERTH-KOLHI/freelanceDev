@@ -1,10 +1,13 @@
 /* Hero Section - Overflow Safe Implementation */
 .hero {
     background: #FFFFFF;
-    padding: 120px 0 80px 0;
-    /* Moderate bottom padding for balanced spacing */
+    min-height: 100vh;
+    /* Always fill full viewport height */
+    padding: 80px 0 40px 0;
+    /* Top padding accounts for fixed header */
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
     width: 100%;
     max-width: 100vw;
@@ -507,8 +510,10 @@
 /* Responsive */
 @media (max-width: 1024px) {
     .hero {
-        padding: 120px 0 60px 0;
-        /* Clear fixed header on tablets */
+        min-height: 100vh;
+        /* Always fill full viewport height */
+        padding: 80px 0 40px 0;
+        /* Top padding accounts for fixed header */
     }
 
     .hero-container {
@@ -658,8 +663,10 @@
 
 @media (max-width: 480px) {
     .hero {
-        padding: 100px 0 40px 0;
-        /* Clear fixed header on very small screens */
+        min-height: 100vh;
+        /* Always fill full viewport height */
+        padding: 80px 0 40px 0;
+        /* Top padding accounts for fixed header */
     }
 
     .hero-headline {
