@@ -31,6 +31,8 @@
     padding-left: 15px;
     flex: 0 0 50%;
     max-width: 50%;
+    display: flex;
+    /* Enable flex for equal height children */
 }
 
 .col-md-3 {
@@ -62,7 +64,14 @@
     flex-wrap: wrap;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 0;
+    min-height: 200px;
+    /* Ensure equal box heights */
+    align-items: center;
+    /* Vertically center content */
+    width: 100%;
+    /* Fill parent container */
 }
+
 
 .box-a:before,
 .box-b:before {
@@ -134,6 +143,12 @@
     flex-wrap: wrap;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 0;
+    min-height: 200px;
+    /* Ensure equal box heights */
+    align-items: center;
+    /* Vertically center content */
+    width: 100%;
+    /* Fill parent container */
 }
 
 .box-b i {
