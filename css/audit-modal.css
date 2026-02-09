@@ -1,0 +1,237 @@
+/* ===================================
+   AUDIT MODAL STYLES
+   =================================== */
+
+/* Modal Overlay */
+.audit-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.audit-modal-overlay.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+/* Modal Content */
+.audit-modal-content {
+    background: #FFFFFF;
+    border-radius: 16px;
+    max-width: 540px;
+    width: 100%;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin: auto;
+}
+
+.audit-modal-overlay.active .audit-modal-content {
+    transform: scale(1);
+}
+
+/* Close Button */
+.audit-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #9CA3AF;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    line-height: 1;
+}
+
+.audit-modal-close:hover {
+    background: #F3F4F6;
+    color: #111827;
+}
+
+/* Modal Header */
+.audit-modal-header {
+    margin-bottom: 30px;
+}
+
+.audit-modal-header h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+}
+
+.audit-modal-header p {
+    font-size: 0.9375rem;
+    color: #6B7280;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Form Styles */
+.audit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px 16px;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 0.9375rem;
+    color: #111827;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    background: #FFFFFF;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9CA3AF;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Submit Button */
+.audit-submit-btn {
+    background: #3B82F6;
+    color: #FFFFFF;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+    margin-top: 10px;
+}
+
+.audit-submit-btn:hover {
+    background: #2563EB;
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.4);
+}
+
+.audit-submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Loading State */
+.audit-submit-btn.loading {
+    background: #9CA3AF;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.audit-submit-btn.loading::after {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-left: 10px;
+    border: 2px solid #FFFFFF;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .audit-modal-overlay {
+        padding: 15px;
+    }
+
+    .audit-modal-content {
+        padding: 30px 24px;
+        max-width: 100%;
+    }
+
+    .audit-modal-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .audit-modal-header p {
+        font-size: 0.875rem;
+    }
+
+    .audit-modal-close {
+        top: 15px;
+        right: 15px;
+        width: 36px;
+        height: 36px;
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .audit-modal-content {
+        padding: 24px 20px;
+    }
+
+    .audit-modal-header h2 {
+        font-size: 1.375rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px 14px;
+        font-size: 0.875rem;
+    }
+
+    .audit-submit-btn {
+        padding: 12px 24px;
+        font-size: 0.9375rem;
+    }
+}

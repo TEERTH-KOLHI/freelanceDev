@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/real-stats.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/audit-modal.css">
 
     <!-- Google Analytics Placeholder -->
     <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
@@ -74,9 +75,10 @@
                     build fast, custom websites tailored to your business.
                 </p>
                 <div class="hero-actions">
-                    <a href="https://www.freelancer.com/u/teerthofficial" target="_blank" rel="noopener noreferrer"
-                        class="btn btn-primary">Hire Us on Freelancer.com</a>
+                    <!-- Primary CTA Button -->
+                    <button class="btn btn-primary" onclick="openAuditModal()">Get a Free Website Audit</button>
 
+                    <!-- Social Proof -->
                     <div class="social-proof">
                         <div class="avatars">
                             <img src="assets/images/avatar-1.png" alt="Client 1" class="avatar-circle">
@@ -94,6 +96,14 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Trust Line with embedded link -->
+                <p class="trust-line">
+                    <i class="fas fa-shield-alt trust-icon"></i>
+                    We work directly or via <a href="https://www.freelancer.com/u/teerthofficial" target="_blank"
+                        rel="noopener noreferrer" class="freelancer-inline-link">Freelancer.com</a> for client's payment
+                    security.
+                </p>
             </div>
 
             <!-- Static Status Window -->
@@ -1267,6 +1277,49 @@
         </div>
     </footer>
 
+    <!-- Audit Request Modal -->
+    <div id="audit-modal" class="audit-modal-overlay">
+        <div class="audit-modal-content">
+            <button class="audit-modal-close" onclick="closeAuditModal()">&times;</button>
+
+            <div class="audit-modal-header">
+                <h2>Get Your Free Website Audit</h2>
+                <p>Tell us about your brand and we'll send you a personalized audit within 24 hours.</p>
+            </div>
+
+            <form id="audit-form" class="audit-form">
+                <div class="form-group">
+                    <label for="audit-name">Name *</label>
+                    <input type="text" id="audit-name" name="name" placeholder="Your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="audit-email">Email *</label>
+                    <input type="email" id="audit-email" name="email" placeholder="your@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="audit-youtube">YouTube Channel Link *</label>
+                    <input type="url" id="audit-youtube" name="youtube" placeholder="https://youtube.com/@yourchannel"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="audit-website">Current Website (Optional)</label>
+                    <input type="url" id="audit-website" name="website" placeholder="https://yourwebsite.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="audit-goal">What are you trying to achieve with your brand? *</label>
+                    <textarea id="audit-goal" name="goal" rows="4" placeholder="Tell us about your goals..."
+                        required></textarea>
+                </div>
+
+                <button type="submit" class="audit-submit-btn">Request Free Audit</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Success Modal -->
     <div id="success-modal" class="modal-overlay">
         <div class="modal-content">
@@ -1280,6 +1333,7 @@
     </div>
 
     <script src="js/main.js"></script>
+    <script src="js/audit-modal.js"></script>
     <!-- Typing Effect Script -->
     <script src="js/typing.js"></script>
 </body>
