@@ -30,9 +30,9 @@
 .audit-modal-content {
     background: #FFFFFF;
     border-radius: 16px;
-    max-width: 540px;
+    max-width: 460px;
     width: 100%;
-    padding: 40px;
+    padding: 24px;
     position: relative;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     transform: scale(0.9);
@@ -71,7 +71,7 @@
 
 /* Modal Header */
 .audit-modal-header {
-    margin-bottom: 30px;
+    margin-bottom: 16px;
 }
 
 .audit-modal-header h2 {
@@ -93,13 +93,13 @@
 .audit-form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 12px;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
 }
 
 .form-group label {
@@ -110,7 +110,7 @@
 
 .form-group input,
 .form-group textarea {
-    padding: 12px 16px;
+    padding: 8px 12px;
     border: 2px solid #E5E7EB;
     border-radius: 8px;
     font-size: 0.9375rem;
@@ -134,14 +134,14 @@
 
 .form-group textarea {
     resize: vertical;
-    min-height: 100px;
+    min-height: 60px;
 }
 
 /* Submit Button */
 .audit-submit-btn {
     background: #3B82F6;
     color: #FFFFFF;
-    padding: 14px 28px;
+    padding: 10px 24px;
     border: none;
     border-radius: 8px;
     font-size: 1rem;
@@ -149,7 +149,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
-    margin-top: 10px;
+    margin-top: 4px;
 }
 
 .audit-submit-btn:hover {
