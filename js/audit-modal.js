@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
         submitBtn.classList.add('loading');
         submitBtn.textContent = 'Sending...';
 
-        fetch("https://formsubmit.co/ajax/teerth4dm@gmail.com", {
+        fetch("https://formsubmit.co/ajax/info.freelancedev@gmail.com", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
