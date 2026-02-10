@@ -46,19 +46,38 @@ document.addEventListener('DOMContentLoaded', function () {
         submitBtn.classList.add('loading');
         submitBtn.textContent = 'Sending...';
 
-        // Simulate form submission (replace with actual API call)
-        setTimeout(() => {
-            console.log('Audit Request Data:', formData);
+        // Send data to FormSubmit using Ajax
+        fetch("https://formsubmit.co/ajax/teerth4dm@gmail.com", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                ...formData,
+                _subject: "New Website Audit Request!",
+                _template: "table"
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
 
-            // Show success message
-            closeAuditModal();
-            showSuccessModal('Audit Request Received!', 'Thanks! We\'ll send your personalized website audit within 24 hours.');
+                // Show success message
+                closeAuditModal();
+                showSuccessModal('Audit Request Received!', 'Thanks! We\'ll send your personalized website audit within 24 hours.');
 
-            // Reset form
-            auditForm.reset();
-            submitBtn.classList.remove('loading');
-            submitBtn.textContent = 'Request Free Audit';
-        }, 1500);
+                // Reset form
+                auditForm.reset();
+                submitBtn.classList.remove('loading');
+                submitBtn.textContent = 'Request Free Audit';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                submitBtn.classList.remove('loading');
+                submitBtn.textContent = 'Try Again';
+                alert('Something went wrong. Please try again later.');
+            });
     });
 });
 
