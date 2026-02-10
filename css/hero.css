@@ -70,6 +70,46 @@
     font-weight: 400;
 }
 
+/* Social Media Brand Colors */
+.brand-youtube {
+    color: #FF0000;
+    font-weight: 600;
+}
+
+.brand-tiktok {
+    color: #000000;
+    font-weight: 600;
+}
+
+.brand-instagram {
+    background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
+.brand-facebook {
+    color: #1877F2;
+    font-weight: 600;
+}
+
+.brand-snapchat {
+    color: #FFFC00;
+    font-weight: 600;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.brand-x {
+    color: #000000;
+    font-weight: 600;
+}
+
+.brand-twitch {
+    color: #9146FF;
+    font-weight: 600;
+}
+
 /* Actions */
 .hero-actions {
     display: flex;
