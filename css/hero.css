@@ -607,7 +607,7 @@
 
 /* Trust Line */
 .trust-line {
-    font-size: 0.875rem;
+    font-size: 1.3rem;
     color: #6B7280;
     margin: 0.75rem 0 0 0;
     font-weight: 400;
@@ -617,10 +617,14 @@
     gap: 8px;
 }
 
+.trust-line span {
+    flex: 1;
+}
+
 /* Trust Icon */
 .trust-icon {
     color: #10B981;
-    font-size: 1rem;
+    font-size: 1.3rem;
     flex-shrink: 0;
 }
 
@@ -1119,13 +1123,15 @@
         text-align: left;
         width: 100%;
         margin-top: 1rem;
-        flex-wrap: wrap;
-        font-size: 0.8125rem;
+        /* flex-wrap: wrap; Removed to keep icon and text on same row */
+        font-size: 1.2rem;
         line-height: 1.5;
+        align-items: flex-start;
+        /* Align icon to top if text wraps */
     }
 
     .trust-icon {
-        font-size: 0.875rem;
+        font-size: 1.2rem;
     }
 
     .social-proof {
@@ -1296,12 +1302,14 @@
 
     .trust-line {
         margin-top: 1rem;
-        font-size: 0.75rem;
+        font-size: 0.85rem;
         gap: 6px;
     }
 
     .trust-icon {
-        font-size: 0.8125rem;
+        font-size: 0.75rem;
+        margin-top: 4px;
+        /* Align with first line of text */
     }
 
     .social-proof {
