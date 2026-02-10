@@ -342,12 +342,17 @@ document.addEventListener('DOMContentLoaded', () => {
                             modal.classList.add('active');
                             form.reset(); // Clear inputs
                         } else {
-                            alert('Something went wrong. Please try again.');
+                            // Show specific error for debugging
+                            response.json().then(data => {
+                                alert(`Form error: ${data.message || 'Unknown error'}`);
+                            }).catch(() => {
+                                alert(`Submission failed. Status: ${response.status} ${response.statusText}`);
+                            });
                         }
                     })
                     .catch(error => {
                         console.error('Error:', error);
-                        alert('Something went wrong. Please try again later.');
+                        alert(`Network error: ${error.message}. Please check your connection.`);
                     })
                     .finally(() => {
                         // Restore Button
