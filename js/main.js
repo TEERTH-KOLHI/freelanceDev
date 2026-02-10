@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navToggle.addEventListener('click', () => {
             headerNav.classList.toggle('nav-active');
             navToggle.classList.toggle('nav-active');
-            
+
             // Push hero content down when menu is open
             if (heroSection) {
                 heroSection.classList.toggle('menu-open');
@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', () => {
                 headerNav.classList.remove('nav-active');
                 navToggle.classList.remove('nav-active');
-                
+
                 // Remove push-down class when menu closes
                 if (heroSection) {
                     heroSection.classList.remove('menu-open');
@@ -357,4 +357,39 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // --- Testimonial Auto-Navigation ---
+    const testimonialRadios = document.querySelectorAll('input[name="panel"]');
+    if (testimonialRadios.length > 0) {
+        let testimonialInterval;
+        const intervalTime = 3000; // 3 seconds in milliseconds
+
+        const nextTestimonial = () => {
+            // Find currently checked index
+            let currentIndex = -1;
+            testimonialRadios.forEach((radio, index) => {
+                if (radio.checked) currentIndex = index;
+            });
+
+            // If none checked (shouldn't happen), assume -1, so next is 0
+            const nextIndex = (currentIndex + 1) % testimonialRadios.length;
+            testimonialRadios[nextIndex].checked = true;
+        };
+
+        const startInterval = () => {
+            if (testimonialInterval) clearInterval(testimonialInterval);
+            testimonialInterval = setInterval(nextTestimonial, intervalTime);
+        };
+
+        // Start auto-navigation
+        startInterval();
+
+        // Reset timer when manually changed to prevent immediate jump
+        testimonialRadios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                startInterval();
+            });
+        });
+    }
+
 });
