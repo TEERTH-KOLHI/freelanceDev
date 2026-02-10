@@ -256,11 +256,14 @@
         display: flex;
         align-items: center;
         /* Persistent Hover Effect as default on mobile */
-        box-shadow: 1px 1px 20px 6px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        /* Light border for definition */
     }
 
     .skill-card::before {
-        clip-path: circle(110vw at 100% 100%) !important;
+        display: none !important;
     }
 
     .skill-card:nth-child(n) {
@@ -272,26 +275,44 @@
         padding-left: 0 !important;
         text-align: left;
         width: 100%;
-        color: #ffffff;
+        color: #1a1a2e;
     }
 
     .card-content h3 {
         font-size: 1.4rem;
         margin-bottom: 8px;
-        color: #ffffff;
+        color: #1a1a2e;
     }
 
     .card-content p {
         font-size: 0.9rem;
-        color: rgba(255, 255, 255, 0.9);
+        color: #6b7280;
     }
 
-    /* Make icons slightly visible on mobile for better context */
+    /* Prevent text from turning white on touch/hover in mobile */
+    .skill-card:hover h3,
+    .skill-card:active h3 {
+        color: #1a1a2e !important;
+    }
+
+    .skill-card:hover p,
+    .skill-card:active p {
+        color: #6b7280 !important;
+    }
+
+    /* Make icons fully visible on mobile */
     .card-icon {
-        opacity: 0.25;
-        font-size: 3rem;
+        opacity: 1 !important;
+        font-size: 2.5rem;
         right: 20px;
-        color: #ffffff;
+        color: #3B82F6;
+        background: rgba(59, 130, 246, 0.1);
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
     }
 
     .skill-card:nth-child(2) .card-icon,
