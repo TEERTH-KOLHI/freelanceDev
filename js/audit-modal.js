@@ -100,6 +100,20 @@ function showSuccessModal(title, message) {
         if (messageElement) messageElement.textContent = message;
 
         successModal.style.display = 'flex';
+        // Force reflow
+        successModal.offsetHeight;
+        successModal.classList.add('active');
+
+        // Add close logic for success modal if not already there
+        const closeBtn = successModal.querySelector('#close-modal-btn');
+        if (closeBtn) {
+            closeBtn.onclick = function () {
+                successModal.classList.remove('active');
+                setTimeout(() => {
+                    successModal.style.display = 'none';
+                }, 300);
+            };
+        }
     }
 }
 
