@@ -110,6 +110,178 @@
     font-weight: 600;
 }
 
+/* Brand Wrapper for Hover Effects */
+.brand-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.brand-wrapper:hover {
+    transform: scale(1.05);
+}
+
+/* Brand Icons - Hidden by Default */
+.brand-wrapper .brand-icon {
+    position: absolute;
+    font-size: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* YouTube Icons */
+.brand-youtube-wrapper .brand-icon {
+    color: #FF0000;
+}
+
+.brand-youtube-wrapper:hover .brand-icon:nth-child(2) {
+    opacity: 1;
+    transform: translate(-25px, -20px) rotate(-15deg);
+}
+
+.brand-youtube-wrapper:hover .brand-icon:nth-child(3) {
+    opacity: 1;
+    transform: translate(25px, -25px) rotate(15deg);
+}
+
+.brand-youtube-wrapper:hover .brand-icon:nth-child(4) {
+    opacity: 1;
+    transform: translate(0px, -30px) rotate(0deg);
+}
+
+/* TikTok Icons */
+.brand-tiktok-wrapper .brand-icon {
+    color: #000000;
+}
+
+.brand-tiktok-wrapper:hover .brand-icon:nth-child(2) {
+    opacity: 1;
+    transform: translate(-30px, -15px) rotate(-20deg);
+}
+
+.brand-tiktok-wrapper:hover .brand-icon:nth-child(3) {
+    opacity: 1;
+    transform: translate(30px, -20px) rotate(20deg);
+}
+
+.brand-tiktok-wrapper:hover .brand-icon:nth-child(4) {
+    opacity: 1;
+    transform: translate(0px, -35px) rotate(5deg);
+}
+
+/* Instagram Icons - Gradient */
+.brand-instagram-wrapper .brand-icon {
+    background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.brand-instagram-wrapper:hover .brand-icon:nth-child(2) {
+    opacity: 1;
+    transform: translate(-28px, -18px) rotate(-10deg);
+}
+
+.brand-instagram-wrapper:hover .brand-icon:nth-child(3) {
+    opacity: 1;
+    transform: translate(28px, -22px) rotate(10deg);
+}
+
+.brand-instagram-wrapper:hover .brand-icon:nth-child(4) {
+    opacity: 1;
+    transform: translate(0px, -32px) rotate(-5deg);
+}
+
+/* Facebook Icons */
+.brand-facebook-wrapper .brand-icon {
+    color: #1877F2;
+}
+
+.brand-facebook-wrapper:hover .brand-icon:nth-child(2) {
+    opacity: 1;
+    transform: translate(-26px, -20px) rotate(-12deg);
+}
+
+.brand-facebook-wrapper:hover .brand-icon:nth-child(3) {
+    opacity: 1;
+    transform: translate(26px, -24px) rotate(12deg);
+}
+
+.brand-facebook-wrapper:hover .brand-icon:nth-child(4) {
+    opacity: 1;
+    transform: translate(0px, -33px) rotate(0deg);
+}
+
+/* Snapchat Icons */
+.brand-snapchat-wrapper .brand-icon {
+    color: #FFFC00;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.brand-snapchat-wrapper:hover .brand-icon:nth-child(2) {
+    opacity: 1;
+    transform: translate(-32px, -16px) rotate(-18deg);
+}
+
+.brand-snapchat-wrapper:hover .brand-icon:nth-child(3) {
+    opacity: 1;
+    transform: translate(32px, -20px) rotate(18deg);
+}
+
+.brand-snapchat-wrapper:hover .brand-icon:nth-child(4) {
+    opacity: 1;
+    transform: translate(0px, -34px) rotate(3deg);
+}
+
+/* X (Twitter) Icons */
+.brand-x-wrapper .brand-icon-x {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" fill="black"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.brand-x-wrapper:hover .brand-icon-x:nth-child(2) {
+    opacity: 1;
+    transform: translate(-20px, -22px) rotate(-25deg);
+}
+
+.brand-x-wrapper:hover .brand-icon-x:nth-child(3) {
+    opacity: 1;
+    transform: translate(20px, -26px) rotate(25deg);
+}
+
+.brand-x-wrapper:hover .brand-icon-x:nth-child(4) {
+    opacity: 1;
+    transform: translate(0px, -36px) rotate(-8deg);
+}
+
+/* Twitch Icons */
+.brand-twitch-wrapper .brand-icon {
+    color: #9146FF;
+}
+
+.brand-twitch-wrapper:hover .brand-icon:nth-child(2) {
+    opacity: 1;
+    transform: translate(-27px, -19px) rotate(-14deg);
+}
+
+.brand-twitch-wrapper:hover .brand-icon:nth-child(3) {
+    opacity: 1;
+    transform: translate(27px, -23px) rotate(14deg);
+}
+
+.brand-twitch-wrapper:hover .brand-icon:nth-child(4) {
+    opacity: 1;
+    transform: translate(0px, -31px) rotate(7deg);
+}
+
 /* Actions */
 .hero-actions {
     display: flex;
