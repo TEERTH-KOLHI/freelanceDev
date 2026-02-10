@@ -428,6 +428,14 @@ button.contact_form_submit:hover {
         color: #3B82F6;
         width: 16px;
     }
+
+    .contact-highlight {
+        background: none;
+        -webkit-background-clip: border-box;
+        background-clip: border-box;
+        -webkit-text-fill-color: initial;
+        color: #3B82F6;
+    }
 }
 
 /* Success Modal Styles */
@@ -548,4 +556,15 @@ button.contact_form_submit:hover {
     font-weight: 700;
     display: inline-block;
     /* Often needed for gradients to render correctly on text */
+}
+
+/* Force Solid Blue on Mobile */
+@media (max-width: 768px) {
+    .contact-highlight {
+        background: none !important;
+        -webkit-background-clip: border-box !important;
+        background-clip: border-box !important;
+        -webkit-text-fill-color: initial !important;
+        color: #3B82F6 !important;
+    }
 }
