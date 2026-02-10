@@ -324,7 +324,9 @@ input[type=radio]:checked+article {
 .quotes:has(input#option-8:checked)+.dots>label:nth-child(8)::before,
 .quotes:has(input#option-9:checked)+.dots>label:nth-child(9)::before,
 .quotes:has(input#option-10:checked)+.dots>label:nth-child(10)::before,
-.quotes:has(input#option-11:checked)+.dots>label:nth-child(11)::before {
+.quotes:has(input#option-11:checked)+.dots>label:nth-child(11)::before,
+.quotes:has(input#option-12:checked)+.dots>label:nth-child(12)::before,
+.quotes:has(input#option-13:checked)+.dots>label:nth-child(13)::before {
     --_dots-inset: .25rem;
 }
 
