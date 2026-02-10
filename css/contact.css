@@ -538,3 +538,14 @@ button.contact_form_submit:hover {
     color: #0ea5e9;
     /* Light blue on focus */
 }
+
+/* Gradient Text Highlight */
+.contact-highlight {
+    background: linear-gradient(90deg, #60A5FA 0%, #FFFFFF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    display: inline-block;
+    /* Often needed for gradients to render correctly on text */
+}
