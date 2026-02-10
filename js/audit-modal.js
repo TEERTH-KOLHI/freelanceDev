@@ -42,11 +42,11 @@ document.addEventListener('DOMContentLoaded', function () {
             goal: document.getElementById('audit-goal').value
         };
 
-        // Add loading state
+        // Send data to FormSubmit using Ajax
+        console.log("Sending request to FormSubmit...");
         submitBtn.classList.add('loading');
         submitBtn.textContent = 'Sending...';
 
-        // Send data to FormSubmit using Ajax
         fetch("https://formsubmit.co/ajax/teerth4dm@gmail.com", {
             method: "POST",
             headers: {
@@ -59,9 +59,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 _template: "table"
             })
         })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("HTTP Status " + response.status);
+                }
+                return response.json();
+            })
             .then(data => {
-                console.log('Success:', data);
+                console.log('Success data:', data);
 
                 // Show success message
                 closeAuditModal();
@@ -73,10 +78,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 submitBtn.textContent = 'Request Free Audit';
             })
             .catch(error => {
-                console.error('Error:', error);
+                console.error('Fetch Error:', error);
+
+                // User-friendly error message
+                alert("Something went wrong while sending your request. Please check your internet connection and try again.");
+
                 submitBtn.classList.remove('loading');
                 submitBtn.textContent = 'Try Again';
-                alert('Something went wrong. Please try again later.');
             });
     });
 });
