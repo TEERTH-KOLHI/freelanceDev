@@ -76,7 +76,7 @@
 
 .right_conatct_social_icon {
     height: 100%;
-    background: #075985;
+    background: #3B82F6;
 }
 
 .contact_field h3 {
@@ -108,7 +108,7 @@
 .contact_field .form-control:focus {
     box-shadow: none;
     outline: none;
-    border-bottom: 2px solid #075985;
+    border-bottom: 2px solid #3B82F6;
 }
 
 .contact_field .form-control::placeholder {
@@ -211,7 +211,7 @@ button.contact_form_submit:hover {
 .cta-box h3 {
     margin-bottom: 25px;
     font-weight: 700;
-    color: #075985;
+    color: #3B82F6;
     font-size: 1.8rem;
 }
 
@@ -250,7 +250,7 @@ button.contact_form_submit:hover {
     align-items: center;
     justify-content: center;
     margin: 50px 0;
-    color: #075985;
+    color: #3B82F6;
     font-weight: 700;
     font-size: 0.9rem;
     letter-spacing: 2px;
@@ -318,7 +318,7 @@ button.contact_form_submit:hover {
 
     .mobile-contact-header {
         margin-bottom: 15px;
-        border-left: 4px solid #075985;
+        border-left: 4px solid #3B82F6;
         padding-left: 15px;
     }
 
@@ -373,14 +373,14 @@ button.contact_form_submit:hover {
     .mobile-input-group input:focus,
     .mobile-input-group textarea:focus {
         outline: none;
-        border-color: #075985;
+        border-color: #3B82F6;
         background: #ffffff;
         box-shadow: 0 0 0 3px rgba(7, 89, 133, 0.1);
     }
 
     .mobile-input-group input:focus+i,
     .mobile-input-group textarea:focus+i {
-        color: #075985;
+        color: #3B82F6;
     }
 
     .mobile-submit-btn {
@@ -425,7 +425,7 @@ button.contact_form_submit:hover {
     }
 
     .mobile-contact-info-footer i {
-        color: #075985;
+        color: #3B82F6;
         width: 16px;
     }
 }
@@ -522,7 +522,7 @@ button.contact_form_submit:hover {
     position: absolute;
     left: 0;
     top: 12px;
-    color: #075985;
+    color: #3B82F6;
     font-size: 16px;
     pointer-events: none;
     /* Let clicks pass through to input */

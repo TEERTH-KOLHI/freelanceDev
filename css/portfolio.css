@@ -40,7 +40,7 @@
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     display: flex;
     flex-direction: column;
-    border: 1px solid #075985;
+    border: 1px solid #3B82F6;
     /* Matching Testimonials border */
     box-sizing: border-box;
 }
@@ -55,7 +55,7 @@
 .portfolio-item:hover {
     box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
     transform: translateY(-8px);
-    border-color: #075985;
+    border-color: #3B82F6;
 }
 
 .portfolio-img {
@@ -130,7 +130,7 @@
 
 .tag {
     background: #f7fafc;
-    color: #075985;
+    color: #3B82F6;
     padding: 4px 10px;
     border-radius: 0;
     font-size: 0.7rem;
@@ -148,8 +148,8 @@
     width: 45px;
     height: 45px;
     background: #fff;
-    border: 1px solid #075985;
-    color: #075985;
+    border: 1px solid #3B82F6;
+    color: #3B82F6;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -159,9 +159,9 @@
 }
 
 .portfolio-nav-btn:hover {
-    background: #075985;
+    background: #3B82F6;
     color: #fff;
-    border-color: #075985;
+    border-color: #3B82F6;
     transform: translateY(-50%) scale(1.1);
 }
 

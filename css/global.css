@@ -1,8 +1,8 @@
 :root {
   /* Color Palette */
-  --primary-blue: #2B6CB0;
-  /* Calm Blue */
-  --primary-dark: #2C5282;
+  --primary-blue: #3B82F6;
+  /* Bright Blue - Bug Fixer Color */
+  --primary-dark: #2563EB;
   --accent-green: #38A169;
   /* Fresh Green */
   --accent-green-dark: #2F855A;
