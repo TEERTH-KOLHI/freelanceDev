@@ -259,11 +259,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Navbar Toggle logic ---
     const navToggle = document.querySelector('.nav-toggle');
     const headerNav = document.querySelector('.header-nav');
+    const heroSection = document.querySelector('.hero');
 
     if (navToggle && headerNav) {
         navToggle.addEventListener('click', () => {
             headerNav.classList.toggle('nav-active');
             navToggle.classList.toggle('nav-active');
+            
+            // Push hero content down when menu is open
+            if (heroSection) {
+                heroSection.classList.toggle('menu-open');
+            }
         });
 
         // Close menu when clicking a link
@@ -272,6 +278,11 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', () => {
                 headerNav.classList.remove('nav-active');
                 navToggle.classList.remove('nav-active');
+                
+                // Remove push-down class when menu closes
+                if (heroSection) {
+                    heroSection.classList.remove('menu-open');
+                }
             });
         });
     }
