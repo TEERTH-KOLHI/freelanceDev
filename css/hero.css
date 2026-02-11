@@ -39,7 +39,8 @@
 /* Content Side (Left) */
 .hero-content {
     flex: 1;
-    min-width: 350px;
+    /* min-width: 350px; Removed to prevent overflow on small screens */
+    min-width: unset;
     /* Prevent squashing */
     max-width: 550px;
     text-align: left;
