@@ -1385,3 +1385,12 @@
     z-index: 1;
     /* white-space: pre-wrap; Removed to allow natural wrapping */
 }
+
+/* Freelancer Logo in Trust Line */
+.freelancer-logo {
+    height: 24px;
+    vertical-align: middle;
+    margin: 0 4px;
+    transform: translateY(-2px);
+    display: inline-block;
+}
