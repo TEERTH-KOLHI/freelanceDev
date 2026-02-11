@@ -1390,7 +1390,28 @@
 .freelancer-logo {
     height: 24px;
     vertical-align: middle;
-    margin: 0 4px;
     transform: translateY(-2px);
     display: inline-block;
+    animation: simpleBlink 2s infinite ease-in-out;
+}
+
+.freelancer-inline-link {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 2px;
+    margin: 0 4px;
+    /* Maintain spacing */
+}
+
+/* Simple Blink Animation */
+@keyframes simpleBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
 }
