@@ -70,7 +70,7 @@
 }
 
 .footer-links a:hover {
-    color: #849997;
+    color: var(--primary-blue);
 }
 
 .footer-socials {
@@ -94,8 +94,32 @@
 }
 
 .footer-social-link:hover {
-    background: #849997;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    color: #fff;
+}
+
+/* Brand Hover Colors */
+.social-fb:hover {
+    background-color: #1877F2;
+    /* Facebook Blue */
+}
+
+.social-x:hover {
+    background-color: #000000;
+    /* X Black */
+    border: 1px solid #333;
+    /* Border for visibility on dark footer */
+}
+
+.social-in:hover {
+    background-color: #0A66C2;
+    /* LinkedIn Blue */
+}
+
+.social-gh:hover {
+    background-color: #333;
+    /* Github Dark Grey */
+    border: 1px solid #555;
 }
 
 .footer-bottom {
