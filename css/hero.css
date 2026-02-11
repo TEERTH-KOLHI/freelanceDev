@@ -1399,8 +1399,8 @@
     display: inline-block;
     position: relative;
     padding-bottom: 2px;
-    margin: 0 4px;
-    /* Maintain spacing */
+    margin: 0 2px;
+    /* Reduced from 4px to tighten spacing */
 }
 
 /* Simple Blink Animation */
