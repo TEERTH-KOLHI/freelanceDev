@@ -237,6 +237,7 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         opacity: 0;
+        visibility: hidden; /* Added to remove from layout */
         pointer-events: none;
         z-index: -1;
     }
@@ -245,6 +246,7 @@
         top: 100%;
         /* Slide down below header */
         opacity: 1;
+        visibility: visible; /* Added to show */
         pointer-events: all;
     }
 
@@ -255,10 +257,12 @@
         gap: 15px;
         width: 95%;
         padding: 0 5px;
+        flex-wrap: wrap; /* Added to prevent overflow */
     }
 
     /* Ultra-Slow Staggered Entrance Animation for Links */
     .header-nav ul li {
+        opacity: 1; /* Reset opacity for visibility management simplicity if needed, but keeping animation logic */
         opacity: 0;
         transform: translateY(-20px);
         transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);

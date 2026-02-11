@@ -50,7 +50,8 @@ html {
 }
 
 body {
-  overflow-x: clip;
+  overflow-x: hidden;
+  /* Changed from clip for better support */
   width: 100%;
   position: relative;
 }
